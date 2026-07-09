@@ -1,0 +1,246 @@
+{
+  "profile": {
+    "name": "Muhammad Abdullah Jamal",
+    "shortName": "Abdullah",
+    "tagline": "I turn data into decisions, and decisions into products.",
+    "role": "Data Analyst & Full-Stack Developer",
+    "specialization": "Data Analytics · Machine Learning · Full-Stack",
+    "location": "Karachi, Pakistan",
+    "yearsOfExperience": "2+",
+    "bio": "I clean messy data, ship predictive models, and build the complete web systems around them, admin panels included. By day I run end-to-end cleaning pipelines and Power BI dashboards; alongside that I train ML models for video, vision and prediction, and ship full-stack apps in Next.js and Node with real admin control.",
+    "avatarSvg": "/src/assets/avatar.svg",
+    "resumeUrl": "/Muhammad-Abdullah-Jamal-Resume.pdf",
+    "social": {
+      "github": "https://github.com/Abdullahjamal9",
+      "linkedin": "https://www.linkedin.com/in/muhammad-abdullah-jamal-705190227/",
+      "instagram": "",
+      "email": "abdullah.jamal1402@gmail.com",
+      "phone": "+92 329 2201880",
+      "website": ""
+    }
+  },
+  "skills": {
+    "categories": [
+      { "name": "Data & Analytics", "items": ["Pandas", "NumPy", "Power BI", "Matplotlib", "Seaborn", "Regex", "Data Wrangling"] },
+      { "name": "Machine Learning", "items": ["Scikit-learn", "XGBoost", "TensorFlow", "PyTorch", "Hugging Face", "VideoMAE", "YOLOv8"] },
+      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind"] },
+      { "name": "Backend", "items": ["Node.js", "Express", "Python", "Prisma", "Socket.IO", "Streamlit"] },
+      { "name": "Databases", "items": ["MySQL", "PostgreSQL", "SQLite", "SQL Server", "MongoDB"] },
+      { "name": "Tools", "items": ["Git & GitHub", "WordPress", "Google Sheets API", "Chart.js", "jsPDF"] }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Premier Tubular Inspection Services",
+      "role": "Data Analyst",
+      "period": "03 2025 — Present",
+      "location": "Karachi, Pakistan",
+      "summary": "Building dashboards, regex pipelines, and React/Node apps end to end.",
+      "highlights": [
+        "Built regex-based data cleaning pipelines for inspection reports.",
+        "Shipped Power BI dashboards used for daily operational decisions.",
+        "Developed React/Node internal tools with full admin control."
+      ]
+    },
+    {
+      "company": "Getgeeko",
+      "role": "WordPress Developer Intern",
+      "period": "01 2025 — 02 2025",
+      "location": "Remote",
+      "summary": "Responsive UI and mobile UX work on WordPress builds.",
+      "highlights": [
+        "Delivered responsive layouts across client WordPress sites.",
+        "Improved mobile UX across key landing pages.",
+        "Collaborated on rapid-turnaround client requests."
+      ]
+    },
+    {
+      "company": "Techma Zone",
+      "role": "Data Scientist Trainee",
+      "period": "11 2023 — 08 2024",
+      "location": "Karachi, Pakistan",
+      "summary": "Trained ML models, built Power BI reports, and deployed to production.",
+      "highlights": [
+        "Trained and evaluated ML models for prediction tasks.",
+        "Built Power BI reports used by internal stakeholders.",
+        "Deployed models and dashboards to production environments."
+      ]
+    },
+    {
+      "company": "RAD",
+      "role": "Data Analyst Intern",
+      "period": "02 2024 — 04 2024",
+      "location": "Karachi, Pakistan",
+      "summary": "SQL and Power BI insights for internal reporting.",
+      "highlights": [
+        "Wrote SQL queries to extract and aggregate business data.",
+        "Built Power BI visuals for internal reporting.",
+        "Worked alongside analysts to define reporting requirements."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "advanced-testing-portal",
+      "title": "Advanced Testing Portal",
+      "subtitle": "Full-stack certification platform",
+      "description": "A full-stack testing and certification portal with candidate management and exam workflows.",
+      "stack": ["React", "Node.js", "MySQL"],
+      "role": "Full-Stack Developer",
+      "year": "2025",
+      "link": "https://github.com/Abdullahjamal9/Advanced_testing_portal",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "premium-shoes-store",
+      "title": "Premium Shoes Store",
+      "subtitle": "E-commerce storefront",
+      "description": "A full-stack e-commerce store built in Next.js with cart, checkout, and admin controls.",
+      "stack": ["Next.js", "Node.js", "Prisma"],
+      "role": "Full-Stack Developer",
+      "year": "2025",
+      "link": "https://github.com/Abdullahjamal9/E-commerce_website",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "whatsapp-bot-dashboard",
+      "title": "WhatsApp Bot Dashboard",
+      "subtitle": "Automation dashboard",
+      "description": "A dashboard for managing and monitoring a WhatsApp automation chatbot.",
+      "stack": ["Node.js", "Socket.IO", "React"],
+      "role": "Full-Stack Developer",
+      "year": "2024",
+      "link": "https://github.com/Abdullahjamal9/Whatsapp-chatbot",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "talent-scan",
+      "title": "Talent Scan",
+      "subtitle": "LLM-powered recruitment",
+      "description": "An LLM-driven recruitment screening tool that scans and ranks candidates.",
+      "stack": ["Python", "LLM", "Hugging Face"],
+      "role": "ML Engineer",
+      "year": "2024",
+      "link": "https://github.com/Abdullahjamal9/Talent_Scan",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "t20-score-predictor",
+      "title": "T20 Score Predictor",
+      "subtitle": "XGBoost prediction model, 85% accuracy",
+      "description": "A cricket score prediction model trained on historical T20 match data.",
+      "stack": ["Python", "XGBoost", "Pandas"],
+      "role": "ML Engineer",
+      "year": "2024",
+      "link": "https://github.com/Abdullahjamal9/T20-Score-Predictor",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "movie-recommender",
+      "title": "Movie Recommender",
+      "subtitle": "NLP-based recommendation engine",
+      "description": "A content-based movie recommender system deployed with Streamlit.",
+      "stack": ["Python", "NLP", "Streamlit"],
+      "role": "ML Engineer",
+      "year": "2024",
+      "link": "https://github.com/Abdullahjamal9/Movie-Recommendation-System",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "fall-detection-videomae",
+      "title": "Fall Detection — VideoMAE",
+      "subtitle": "Deep learning on video",
+      "description": "A fall-detection model built on VideoMAE for video-based safety monitoring.",
+      "stack": ["PyTorch", "VideoMAE"],
+      "role": "Deep Learning Engineer",
+      "year": "2024",
+      "link": "https://github.com/Abdullahjamal9/Balance-Fall-Assessment",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "2d-human-pose-estimation",
+      "title": "2D Human Pose Estimation",
+      "subtitle": "YOLOv8-based pose detection",
+      "description": "A 2D human pose estimation pipeline built with YOLOv8.",
+      "stack": ["YOLOv8", "Python"],
+      "role": "Deep Learning Engineer",
+      "year": "2024",
+      "link": "https://github.com/Abdullahjamal9/Advanced-2D-Human-Pose-Estimation",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "gait-classification",
+      "title": "Gait Classification",
+      "subtitle": "Deep learning on video",
+      "description": "A gait classification model built on VideoMAE for movement-pattern analysis.",
+      "stack": ["PyTorch", "VideoMAE"],
+      "role": "Deep Learning Engineer",
+      "year": "2023",
+      "link": "https://github.com/Abdullahjamal9/Gait-Classification",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "ucf-crime-classification",
+      "title": "UCF Crime Classification",
+      "subtitle": "14-class video classification",
+      "description": "A deep learning classifier trained on the UCF-Crime dataset across 14 classes.",
+      "stack": ["PyTorch", "Deep Learning"],
+      "role": "Deep Learning Engineer",
+      "year": "2023",
+      "link": "https://github.com/Abdullahjamal9/UCF-Crime-Video-Classification",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "google-play-market-analysis",
+      "title": "Google Play Market Analysis",
+      "subtitle": "Exploratory data analysis",
+      "description": "An exploratory data analysis of the Google Play Store app market.",
+      "stack": ["Python", "Pandas", "Matplotlib"],
+      "role": "Data Analyst",
+      "year": "2023",
+      "link": "https://github.com/Abdullahjamal9/Analyzing_app",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "chinook-sql-analysis",
+      "title": "Chinook SQL Analysis",
+      "subtitle": "SQL data analysis",
+      "description": "A SQL-based analysis of the Chinook music store database.",
+      "stack": ["SQL"],
+      "role": "Data Analyst",
+      "year": "2023",
+      "link": "https://github.com/Abdullahjamal9/Chinook_music_store",
+      "image": "",
+      "highlight": false
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Karachi (UBIT)",
+      "credential": "BS in Computer Science",
+      "period": "2021 — 2025"
+    },
+    {
+      "institution": "Techma Zone",
+      "credential": "Data Science · Data Analytics · Power BI certificates",
+      "period": "2023 — 2024"
+    },
+    {
+      "institution": "Government Dehli College",
+      "credential": "Intermediate",
+      "period": "2018 — 2020"
+    }
+  ],
+  "testimonials": []
+}

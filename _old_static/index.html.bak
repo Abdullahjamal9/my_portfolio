@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Abdullah Jamal — Data Analyst & Full-Stack Developer</title>
+<meta name="description" content="Muhammad Abdullah Jamal — Data Analyst, ML engineer, and full-stack developer in Karachi. I turn data into decisions, and decisions into products." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF1F6;
+  --paper-2:#E3E9F0;
+  --card:#FFFFFF;
+  --ink:#101620;
+  --ink-2:#4A5563;
+  --ink-3:#8A94A3;
+  --line:#D3DBE5;
+  --accent:#2438F0;
+  --accent-press:#1B2AC2;
+  --accent-tint:#DDE2FE;
+  --signal:#17B26A;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --pad:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.mono{font-family:var(--mono)}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:90;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px var(--pad);
+  mix-blend-mode:normal;
+  font-family:var(--mono);font-size:13px;letter-spacing:.02em;
+  pointer-events:none;
+}
+.nav>*{pointer-events:auto}
+.nav .brand{font-weight:500}
+.nav .brand .dotmark{color:var(--accent)}
+.nav .links{display:flex;gap:26px}
+.nav .links a{position:relative;color:var(--ink-2);transition:color .2s}
+.nav .links a:hover{color:var(--ink)}
+.nav .links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width .25s ease}
+.nav .links a:hover::after{width:100%}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 var(--pad) 40px;overflow:hidden}
+#skel{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-top{position:absolute;top:96px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);z-index:2}
+.hero-top .avail{display:flex;align-items:center;gap:8px}
+.hero-top .avail .d{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px rgba(23,178,106,.15)}
+.hero-name{position:relative;z-index:2;font-family:var(--display);font-weight:700;letter-spacing:-.035em;line-height:.92;font-size:clamp(3.2rem,12.5vw,11rem);margin:0}
+.hero-name .row{display:block;overflow:hidden}
+.hero-name .ch{display:inline-block;transform:translateY(110%);will-change:transform}
+.hero-name .period{color:var(--accent)}
+.hero-sub{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:34px;flex-wrap:wrap}
+.hero-sub h1{font-family:var(--sans);font-weight:400;font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--ink-2);max-width:44ch;margin:0;line-height:1.65}
+.hero-sub h1 b{color:var(--ink);font-weight:600}
+.hero-socials{display:flex;gap:8px;font-family:var(--mono);font-size:13px;color:var(--ink-2);align-items:center;flex-wrap:wrap}
+.hero-socials a{transition:color .2s}
+.hero-socials a:hover{color:var(--accent)}
+.scroll-cue{position:absolute;right:var(--pad);bottom:44px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);writing-mode:vertical-rl;display:flex;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:1px;height:46px;background:var(--ink-3);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.scroll-cue::after{animation:none}}
+@media(max-width:720px){.scroll-cue{display:none}.hero-top{top:76px;flex-direction:column;gap:6px}}
+
+/* fade-up reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-name .ch{transform:none!important;transition:none!important}}
+
+/* ---------- BIG STATEMENT ---------- */
+.statement{padding:clamp(90px,14vw,180px) var(--pad)}
+.statement .kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.statement h2{font-family:var(--display);font-weight:600;letter-spacing:-.03em;line-height:1.04;font-size:clamp(2rem,6vw,4.6rem);max-width:20ch;margin:0}
+.statement h2 .thin{color:var(--ink-3);font-weight:500}
+.statement p{max-width:52ch;color:var(--ink-2);margin:30px 0 0;font-size:clamp(1rem,1.6vw,1.15rem)}
+.statement .more{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-family:var(--mono);font-size:13px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;transition:color .2s,border-color .2s}
+.statement .more:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- WORKS LIST ---------- */
+.works{padding:0 var(--pad) clamp(80px,10vw,140px)}
+.works-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:0}
+.works-head h2{font-family:var(--display);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:600;letter-spacing:-.02em;margin:0}
+.works-head .count{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.works-head .count b{color:var(--accent);font-weight:500}
+.wrow{
+  display:grid;grid-template-columns:64px 1fr auto auto;gap:20px;align-items:center;
+  padding:26px 6px;border-bottom:1px solid var(--line);cursor:pointer;position:relative;
+  transition:padding .25s ease, background .25s ease;
+}
+.wrow:hover{background:linear-gradient(90deg,rgba(36,56,240,.045),transparent 60%);padding-left:18px}
+.wrow .idx{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.wrow .title{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.25rem,3.4vw,2.2rem);line-height:1.1;transition:color .2s}
+.wrow:hover .title{color:var(--accent)}
+.wrow .cat{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+.wrow .arrow{font-family:var(--mono);color:var(--ink-3);font-size:18px;transition:transform .25s ease,color .2s}
+.wrow:hover .arrow{transform:translate(4px,-4px);color:var(--accent)}
+@media(max-width:720px){.wrow{grid-template-columns:44px 1fr auto}.wrow .cat{display:none}}
+
+/* floating preview */
+#preview{
+  position:fixed;z-index:80;width:min(340px,38vw);aspect-ratio:4/3;border-radius:14px;overflow:hidden;
+  pointer-events:none;opacity:0;transform:scale(.9);transition:opacity .25s ease,transform .25s ease;
+  box-shadow:0 10px 24px rgba(16,22,32,.12),0 40px 90px rgba(16,22,32,.22);
+  background:var(--ink);
+}
+#preview.on{opacity:1;transform:scale(1)}
+#preview .pv{position:absolute;inset:0;display:none}
+#preview .pv.show{display:block}
+#preview .pv svg{width:100%;height:100%;display:block}
+@media(max-width:900px),(hover:none){#preview{display:none}}
+
+/* ---------- SKILLS ---------- */
+.skills{padding:clamp(80px,10vw,140px) var(--pad)}
+.skills .works-head{margin-bottom:8px}
+.skill-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-bottom:1px solid var(--line)}
+.scol{padding:34px 22px 40px 0;border-top:1px solid var(--line)}
+.scol h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+.scol ul{list-style:none;margin:0;padding:0}
+.scol li{font-family:var(--display);font-weight:500;font-size:1.05rem;letter-spacing:-.01em;padding:5px 0;color:var(--ink-2);transition:color .2s,transform .2s}
+.scol li:hover{color:var(--ink);transform:translateX(4px)}
+
+/* ---------- LEDGER (experience / edu) ---------- */
+.ledger{padding:0 var(--pad) clamp(80px,10vw,140px)}
+.lrow{display:grid;grid-template-columns:1fr 1.2fr auto;gap:24px;align-items:baseline;padding:24px 6px;border-bottom:1px solid var(--line);transition:padding .25s ease,background .25s}
+.lrow:hover{padding-left:18px;background:linear-gradient(90deg,rgba(36,56,240,.045),transparent 60%)}
+.lrow .org{font-family:var(--display);font-weight:600;font-size:clamp(1.05rem,2.4vw,1.5rem);letter-spacing:-.015em}
+.lrow .role{color:var(--ink-2);font-size:.98rem}
+.lrow .role .now{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--signal);border:1px solid currentColor;border-radius:999px;padding:2px 9px;margin-left:10px;vertical-align:2px}
+.lrow .date{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+@media(max-width:720px){.lrow{grid-template-columns:1fr;gap:4px}.lrow .date{order:-1}}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--ink);color:var(--paper);padding:clamp(90px,13vw,170px) var(--pad) 0;border-radius:34px 34px 0 0;position:relative;overflow:hidden}
+.contact .kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8f9ffb;margin-bottom:26px}
+.contact h2{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:.95;font-size:clamp(2.6rem,9vw,7.4rem);margin:0;color:#fff}
+.contact h2 .period{color:var(--accent)}
+.contact .duo{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:56px;color:#aeb8c9;max-width:920px}
+.contact .duo p{margin:0;font-size:.98rem;line-height:1.7}
+.contact .duo b{color:#fff;font-weight:600}
+@media(max-width:720px){.contact .duo{grid-template-columns:1fr}}
+.bigmail{
+  display:block;margin:70px calc(-1 * var(--pad)) 0;padding:34px var(--pad);
+  border-top:1px solid rgba(255,255,255,.14);
+  font-family:var(--display);font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(1.15rem,4.4vw,3.4rem);color:#fff;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  transition:background .25s,color .25s;
+}
+.bigmail:hover{background:var(--accent);color:#fff}
+.bigmail .arr{font-family:var(--mono);font-size:.6em;transition:transform .25s}
+.bigmail:hover .arr{transform:translate(6px,-6px)}
+.contact-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:26px 0 30px;font-family:var(--mono);font-size:12.5px;color:#7f8b9d;border-top:1px solid rgba(255,255,255,.14)}
+.contact-foot .socials{display:flex;gap:20px}
+.contact-foot a{color:#c9d2e0;transition:color .2s}
+.contact-foot a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="#top">M<span class="dotmark">.</span>Abdullah Jamal</a>
+  <div class="links">
+    <a href="#works">Works</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <canvas id="skel" aria-hidden="true"></canvas>
+    <div class="hero-top">
+      <span>Karachi, Pakistan — Data &amp; Web</span>
+      <span class="avail"><span class="d"></span>Open to opportunities</span>
+    </div>
+    <p class="hero-name" aria-label="Muhammad Abdullah Jamal">
+      <span class="row" data-split>Muhammad</span>
+      <span class="row" data-split>Abdullah</span>
+      <span class="row"><span data-split>Jamal</span><span class="ch period" style="transform:none">&nbsp;.</span></span>
+    </p>
+    <div class="hero-sub">
+      <h1><b>Data Analyst &amp; Full-Stack Developer.</b> I clean messy data, ship predictive models, and build the complete web systems around them — admin panels included.</h1>
+      <div class="hero-socials">
+        <a href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener">GitHub</a><span>/</span>
+        <a href="https://www.linkedin.com/in/muhammad-abdullah-jamal-705190227/" target="_blank" rel="noopener">LinkedIn</a><span>/</span>
+        <a href="mailto:abdullah.jamal1402@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="scroll-cue">Scroll</div>
+  </header>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="kick reveal">Basically,</div>
+    <h2 class="reveal">I turn data into decisions, <span class="thin">and decisions into products.</span></h2>
+    <p class="reveal">I'm Abdullah — a data analyst in Karachi with a full data science background. By day I run end-to-end cleaning pipelines and Power BI dashboards; alongside that I train ML models for video, vision and prediction, and ship full-stack apps in Next.js and Node with real admin control.</p>
+    <a class="more reveal" href="#works">See the work ↓</a>
+  </section>
+
+  <!-- WORKS -->
+  <section class="works" id="works">
+    <div class="works-head reveal">
+      <h2>Works</h2>
+      <span class="count">(<b>12</b>) — hover to preview</span>
+    </div>
+
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9/Advanced_testing_portal" target="_blank" rel="noopener" data-pv="grid" data-abbr="TP">
+      <span class="idx">01</span><span class="title">Advanced Testing Portal</span><span class="cat">Full-Stack · Certification</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9/E-commerce_website" target="_blank" rel="noopener" data-pv="grid" data-abbr="PS">
+      <span class="idx">02</span><span class="title">Premium Shoes Store</span><span class="cat">Full-Stack · Next.js</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9/Whatsapp-chatbot" target="_blank" rel="noopener" data-pv="grid" data-abbr="WA">
+      <span class="idx">03</span><span class="title">WhatsApp Bot Dashboard</span><span class="cat">Full-Stack · Automation</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="skel" data-abbr="TS">
+      <span class="idx">04</span><span class="title">Talent Scan</span><span class="cat">ML · LLM Recruitment</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="chart" data-abbr="T20">
+      <span class="idx">05</span><span class="title">T20 Score Predictor</span><span class="cat">ML · XGBoost · 85%</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="skel" data-abbr="MR">
+      <span class="idx">06</span><span class="title">Movie Recommender</span><span class="cat">ML · NLP · Streamlit</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="skel" data-abbr="FD">
+      <span class="idx">07</span><span class="title">Fall Detection — VideoMAE</span><span class="cat">Deep Learning · Video</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="skel" data-abbr="2D">
+      <span class="idx">08</span><span class="title">2D Human Pose Estimation</span><span class="cat">Deep Learning · YOLOv8</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="skel" data-abbr="GC">
+      <span class="idx">09</span><span class="title">Gait Classification</span><span class="cat">Deep Learning · VideoMAE</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="skel" data-abbr="UC">
+      <span class="idx">10</span><span class="title">UCF Crime Classification</span><span class="cat">Deep Learning · 14 classes</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="chart" data-abbr="GP">
+      <span class="idx">11</span><span class="title">Google Play Market Analysis</span><span class="cat">Data · EDA</span><span class="arrow">↗</span>
+    </a>
+    <a class="wrow reveal" href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener" data-pv="chart" data-abbr="CH">
+      <span class="idx">12</span><span class="title">Chinook SQL Analysis</span><span class="cat">Data · SQL</span><span class="arrow">↗</span>
+    </a>
+  </section>
+
+  <!-- STATEMENT 2 -->
+  <section class="statement" style="padding-top:0">
+    <h2 class="reveal"><span class="thin">Every project is a chance to learn,</span> experiment, and push past what I built last time.</h2>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="works-head reveal">
+      <h2>Skills</h2>
+      <span class="count">// what I build with</span>
+    </div>
+    <div class="skill-cols">
+      <div class="scol reveal">
+        <h3>Data &amp; Analytics</h3>
+        <ul><li>Pandas</li><li>NumPy</li><li>Power BI</li><li>Matplotlib</li><li>Seaborn</li><li>Regex</li><li>Data Wrangling</li></ul>
+      </div>
+      <div class="scol reveal">
+        <h3>Machine Learning</h3>
+        <ul><li>Scikit-learn</li><li>XGBoost</li><li>TensorFlow</li><li>PyTorch</li><li>Hugging Face</li><li>VideoMAE</li><li>YOLOv8</li></ul>
+      </div>
+      <div class="scol reveal">
+        <h3>Frontend</h3>
+        <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind</li></ul>
+      </div>
+      <div class="scol reveal">
+        <h3>Backend</h3>
+        <ul><li>Node.js</li><li>Express</li><li>Python</li><li>Prisma</li><li>Socket.IO</li><li>Streamlit</li></ul>
+      </div>
+      <div class="scol reveal">
+        <h3>Databases</h3>
+        <ul><li>MySQL</li><li>PostgreSQL</li><li>SQLite</li><li>SQL Server</li><li>MongoDB</li></ul>
+      </div>
+      <div class="scol reveal">
+        <h3>Tools</h3>
+        <ul><li>Git &amp; GitHub</li><li>WordPress</li><li>Google Sheets API</li><li>Chart.js</li><li>jsPDF</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="ledger" id="experience">
+    <div class="works-head reveal">
+      <h2>Experience</h2>
+      <span class="count">// 2023 — present</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">Premier Tubular Inspection Services</span>
+      <span class="role">Data Analyst — dashboards, regex pipelines, React/Node apps<span class="now">Now</span></span>
+      <span class="date">03 2025 — present</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">Getgeeko</span>
+      <span class="role">WordPress Developer Intern — responsive UI, mobile UX</span>
+      <span class="date">01 2025 — 02 2025</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">Techma Zone</span>
+      <span class="role">Data Scientist Trainee — ML models, Power BI, deployments</span>
+      <span class="date">11 2023 — 08 2024</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">RAD</span>
+      <span class="role">Data Analyst Intern — SQL &amp; Power BI insights</span>
+      <span class="date">02 2024 — 04 2024</span>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="ledger" id="education" style="padding-top:0">
+    <div class="works-head reveal">
+      <h2>Education &amp; Certificates</h2>
+      <span class="count">// UBIT, Karachi</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">University of Karachi (UBIT)</span>
+      <span class="role">BS in Computer Science</span>
+      <span class="date">2021 — 2025</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">Techma Zone</span>
+      <span class="role">Data Science · Data Analytics · Power BI certificates</span>
+      <span class="date">2023 — 2024</span>
+    </div>
+    <div class="lrow reveal">
+      <span class="org">Government Dehli College</span>
+      <span class="role">Intermediate</span>
+      <span class="date">2018 — 2020</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer class="contact" id="contact">
+    <div class="kick reveal">Contact</div>
+    <h2 class="reveal">Let's build<br>something<span class="period">.</span></h2>
+    <div class="duo reveal">
+      <p><b>Open to data analyst, ML, and full-stack roles</b> — on-site in Karachi or remote. Motivated to join a team that ships, and to own problems end to end.</p>
+      <p>Also available for <b>freelance builds worldwide</b> — dashboards, predictive models, admin systems, and complete web products.</p>
+    </div>
+    <a class="bigmail reveal" href="mailto:abdullah.jamal1402@gmail.com">
+      <span>abdullah.jamal1402@gmail.com</span><span class="arr">↗</span>
+    </a>
+    <div class="contact-foot">
+      <span>© <span id="yr"></span> Muhammad Abdullah Jamal — Karachi, PK</span>
+      <div class="socials">
+        <a href="https://github.com/Abdullahjamal9" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/muhammad-abdullah-jamal-705190227/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="tel:+923292201880">+92 329 2201880</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- floating project preview -->
+<div id="preview" aria-hidden="true"></div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- hero letter stagger ---- */
+document.querySelectorAll('[data-split]').forEach(el=>{
+  const text = el.textContent;
+  el.textContent = '';
+  [...text].forEach((c,i)=>{
+    const s=document.createElement('span');
+    s.className='ch';
+    s.textContent=c===' '?'\u00A0':c;
+    el.appendChild(s);
+  });
+});
+if(!reduced){
+  const chs=document.querySelectorAll('.hero-name .ch');
+  chs.forEach((s,i)=>{
+    s.animate([{transform:'translateY(110%)'},{transform:'translateY(0)'}],
+      {duration:900,delay:120+i*28,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'});
+  });
+}else{
+  document.querySelectorAll('.hero-name .ch').forEach(s=>s.style.transform='none');
+}
+
+/* ---- reveals ---- */
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---- floating preview ---- */
+const pv=document.getElementById('preview');
+const INK='#101620',ACC='#2438F0',TINT='#DDE2FE',PAPER='#EDF1F6';
+function svgFor(type,abbr){
+  if(type==='chart'){
+    let bars='';for(let i=0;i<9;i++){const h=30+Math.random()*110;bars+=`<rect x="${34+i*30}" y="${190-h}" width="16" height="${h}" rx="3" fill="${i===5?ACC:'rgba(255,255,255,.16)'}"/>`;}
+    return `<svg viewBox="0 0 340 255" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="255" fill="${INK}"/>${bars}<line x1="24" y1="192" x2="316" y2="192" stroke="rgba(255,255,255,.25)"/><text x="26" y="40" font-family="monospace" font-size="13" fill="${TINT}">${abbr} / analytics</text><text x="26" y="234" font-family="monospace" font-size="11" fill="rgba(255,255,255,.4)">df.groupby(...).agg(...)</text></svg>`;
+  }
+  if(type==='skel'){
+    const cx=170,cy=130,s=1.4;
+    const P=[[0,-46],[0,-30],[-16,-24],[-22,-4],[16,-24],[22,-4],[0,-6],[-10,22],[-12,48],[10,22],[12,48]].map(([x,y])=>[cx+x*s,cy+y*s]);
+    const B=[[0,1],[1,2],[2,3],[1,4],[4,5],[1,6],[6,7],[7,8],[6,9],[9,10]];
+    let g='';B.forEach(([a,b])=>{g+=`<line x1="${P[a][0]}" y1="${P[a][1]}" x2="${P[b][0]}" y2="${P[b][1]}" stroke="${ACC}" stroke-width="2" opacity=".85"/>`});
+    P.forEach((p,i)=>{g+=`<circle cx="${p[0]}" cy="${p[1]}" r="${i===0?6:3.6}" fill="${i===0?TINT:ACC}"/>`});
+    return `<svg viewBox="0 0 340 255" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="255" fill="${INK}"/>${g}<text x="26" y="40" font-family="monospace" font-size="13" fill="${TINT}">${abbr} / vision·ml</text><text x="26" y="234" font-family="monospace" font-size="11" fill="rgba(255,255,255,.4)">model.predict(frame)</text></svg>`;
+  }
+  // grid = fullstack admin
+  let cells='';for(let r=0;r<3;r++)for(let c=0;c<4;c++){const on=Math.random()>.55;cells+=`<rect x="${30+c*72}" y="${64+r*46}" width="60" height="34" rx="6" fill="${on?'rgba(36,56,240,.85)':'rgba(255,255,255,.12)'}"/>`;}
+  return `<svg viewBox="0 0 340 255" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="255" fill="${INK}"/><rect x="30" y="26" width="120" height="14" rx="4" fill="${TINT}"/><rect x="238" y="26" width="72" height="14" rx="7" fill="${ACC}"/>${cells}<text x="30" y="234" font-family="monospace" font-size="11" fill="rgba(255,255,255,.4)">admin.controls(everything)</text></svg>`;
+}
+let mx=0,my=0,px=0,py=0,active=false,rafId=null;
+function loop(){
+  px+=(mx-px)*.12;py+=(my-py)*.12;
+  pv.style.left=(px+24)+'px';pv.style.top=(py-90)+'px';
+  rafId=requestAnimationFrame(loop);
+}
+document.querySelectorAll('.wrow').forEach(row=>{
+  row.addEventListener('mouseenter',e=>{
+    pv.innerHTML='<div class="pv show">'+svgFor(row.dataset.pv,row.dataset.abbr)+'</div>';
+    pv.classList.add('on');active=true;
+    if(!reduced&&rafId===null){px=e.clientX;py=e.clientY;loop();}
+  });
+  row.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(reduced){pv.style.left=(mx+24)+'px';pv.style.top=(my-90)+'px';}});
+  row.addEventListener('mouseleave',()=>{pv.classList.remove('on');active=false;if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}});
+});
+
+/* ---- hero skeleton canvas (kept from theme) ---- */
+(function(){
+  const canvas=document.getElementById('skel');const ctx=canvas.getContext('2d');
+  let W,H,dpr,figures=[];
+  const BONES=[[0,1],[1,2],[2,3],[1,4],[4,5],[1,6],[6,7],[7,8],[6,9],[9,10]];
+  const base=()=>[{x:0,y:-46},{x:0,y:-30},{x:-16,y:-24},{x:-22,y:-4},{x:16,y:-24},{x:22,y:-4},{x:0,y:-6},{x:-10,y:22},{x:-12,y:48},{x:10,y:22},{x:12,y:48}];
+  function make(){figures=[];const n=W<700?2:3;
+    for(let i=0;i<n;i++)figures.push({cx:W*(0.55+i*0.18)+(Math.random()*30-15),cy:H*(0.3+Math.random()*0.25),scale:1.3+Math.random()*0.5,phase:Math.random()*6.28,speed:.5+Math.random()*.5,base:base()});}
+  function resize(){dpr=Math.min(devicePixelRatio||1,2);W=canvas.clientWidth;H=canvas.clientHeight;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);make();}
+  function draw(f,t){const sw=Math.sin(t*.0006*f.speed+f.phase),st=Math.sin(t*.0012*f.speed+f.phase);
+    const pts=f.base.map((p,i)=>{let x=p.x,y=p.y;if(i===3)x+=5*sw;if(i===5)x-=5*sw;if(i===8)x+=6*st;if(i===10)x-=6*st;if(i===0)x+=1.5*sw;
+      return{x:f.cx+x*f.scale+sw*4,y:f.cy+y*f.scale};});
+    ctx.lineWidth=1.4;ctx.strokeStyle='rgba(36,56,240,0.14)';ctx.beginPath();
+    BONES.forEach(([a,b])=>{ctx.moveTo(pts[a].x,pts[a].y);ctx.lineTo(pts[b].x,pts[b].y);});ctx.stroke();
+    pts.forEach((p,i)=>{ctx.beginPath();ctx.arc(p.x,p.y,i===0?4:2.4,0,6.28);ctx.fillStyle='rgba(36,56,240,0.3)';ctx.fill();});}
+  function frame(t){ctx.clearRect(0,0,W,H);figures.forEach(f=>draw(f,t));requestAnimationFrame(frame);}
+  resize();addEventListener('resize',()=>{resize();if(reduced){ctx.clearRect(0,0,W,H);figures.forEach(f=>draw(f,0));}});
+  if(reduced){figures.forEach(f=>draw(f,0));}else{requestAnimationFrame(frame);}
+})();
+</script>
+</body>
+</html>
