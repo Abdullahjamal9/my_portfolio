@@ -94,7 +94,7 @@
     },
     {
       "id": "premium-shoes-store",
-      "title": "Premium Shoes Store",
+      "title": "Reliable Store",
       "subtitle": "E-commerce storefront",
       "description": "A full-stack e-commerce store built in Next.js with cart, checkout, and admin controls.",
       "stack": ["Next.js", "Node.js", "Prisma"],
