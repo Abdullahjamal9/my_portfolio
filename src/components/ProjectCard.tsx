@@ -31,11 +31,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <img
           src={project.image}
           alt={project.title}
-          className="mt-6 h-40 min-h-0 w-full shrink-0 rounded-lg object-cover sm:h-48"
+          className="mt-6 min-h-0 w-full flex-1 rounded-lg object-cover max-h-40 sm:max-h-48"
         />
       ) : (
         <div
-          className={`relative mt-6 flex h-40 min-h-0 w-full shrink-0 items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-gradient-to-br sm:h-48 ${visual.gradient}`}
+          className={`relative mt-6 flex w-full flex-1 min-h-0 max-h-40 items-center justify-center overflow-hidden rounded-lg border border-neutral-800 bg-gradient-to-br sm:max-h-48 ${visual.gradient}`}
         >
           <div
             className="absolute inset-0 opacity-[0.12]"
@@ -69,7 +69,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="accent-gradient mt-4 inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-4 py-2 font-mono text-xs font-semibold text-black transition-transform hover:scale-105"
+          className="accent-gradient mt-4 inline-flex w-fit shrink-0 items-center gap-1.5 self-start rounded-full px-4 py-2 font-mono text-xs font-semibold text-black transition-transform hover:scale-105"
         >
           <GithubIcon size={13} />
           View on GitHub
