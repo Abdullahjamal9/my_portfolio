@@ -1,5 +1,6 @@
 import type { Project } from '../types/portfolio'
 import { getProjectVisual } from '../lib/projectVisual'
+import { ArrowUpRight } from 'lucide-react'
 import { GithubIcon } from './icons/BrandIcons'
 
 interface ProjectCardProps {
@@ -64,16 +65,35 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         ))}
       </div>
 
-      {project.link && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="accent-gradient mt-4 inline-flex w-fit shrink-0 items-center gap-1.5 self-start rounded-full px-4 py-2 font-mono text-xs font-semibold text-black transition-transform hover:scale-105"
-        >
-          <GithubIcon size={13} />
-          View on GitHub
-        </a>
+      {(project.liveLink || project.link) && (
+        <div className="mt-4 flex shrink-0 flex-wrap items-center gap-2">
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-gradient inline-flex w-fit items-center gap-1.5 rounded-full px-4 py-2 font-mono text-xs font-semibold text-black transition-transform hover:scale-105"
+            >
+              <ArrowUpRight size={13} strokeWidth={2.5} />
+              Visit Live Site
+            </a>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={
+                project.liveLink
+                  ? 'inline-flex w-fit items-center gap-1.5 rounded-full border border-neutral-700 px-4 py-2 font-mono text-xs font-semibold text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white'
+                  : 'accent-gradient inline-flex w-fit items-center gap-1.5 rounded-full px-4 py-2 font-mono text-xs font-semibold text-black transition-transform hover:scale-105'
+              }
+            >
+              <GithubIcon size={13} />
+              View on GitHub
+            </a>
+          )}
+        </div>
       )}
     </article>
   )

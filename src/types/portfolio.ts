@@ -48,6 +48,7 @@ export interface Project {
   role: string
   year: string
   link: string
+  liveLink?: string
   image: string
   highlight: boolean
 }
