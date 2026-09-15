@@ -11,6 +11,7 @@ export interface Profile {
   name: string
   shortName: string
   tagline: string
+  trajectory: string
   role: string
   specialization: string
   location: string
@@ -32,6 +33,7 @@ export interface Skills {
 
 export interface Experience {
   company: string
+  shortCompany?: string
   role: string
   period: string
   location: string

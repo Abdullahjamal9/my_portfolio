@@ -1,11 +1,11 @@
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
-import SkillsSection from './components/SkillsSection'
-import ExperienceSection from './components/ExperienceSection'
 import ServicesSection from './components/ServicesSection'
+import ExperienceSection from './components/ExperienceSection'
 import ProjectsSection from './components/ProjectsSection'
-import TestimonialsSection from './components/TestimonialsSection'
+import SkillsSection from './components/SkillsSection'
+import EducationSection from './components/EducationSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 
@@ -16,11 +16,11 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
-        <SkillsSection />
-        <ExperienceSection />
         <ServicesSection />
+        <ExperienceSection />
         <ProjectsSection />
-        <TestimonialsSection />
+        <SkillsSection />
+        <EducationSection />
         <ContactSection />
       </main>
       <Footer />

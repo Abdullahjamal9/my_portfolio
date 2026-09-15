@@ -24,10 +24,10 @@ export default function ContactSection() {
             Contact
           </span>
           <h2 className="hero-heading mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
-            Let's build something.
+            Let's turn data into decisions.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-balance text-neutral-400">
-            Open to {profile.role.toLowerCase()} roles and freelance builds, based in{' '}
+            Open to {profile.role.toLowerCase()} and Machine Learning opportunities, based in{' '}
             {profile.location}, available remote.
           </p>
 

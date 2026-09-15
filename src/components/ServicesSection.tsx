@@ -1,35 +1,35 @@
 import { motion } from 'framer-motion'
-import { Server, BrainCircuit, Code2, Cloud } from 'lucide-react'
+import { BarChart3, BrainCircuit, LayoutDashboard } from 'lucide-react'
 
-// TODO: move these rows into portfolio.json once the service copy stabilizes.
 const SERVICES = [
   {
-    name: 'Backend',
-    description: 'APIs and internal tools in Node.js and Python, backed by SQL or MongoDB, with real admin control.',
-    Icon: Server,
+    name: 'Data Analytics',
+    description:
+      'Clean messy datasets, write the SQL, and ship Power BI dashboards that drive real business decisions.',
+    stack: ['Python', 'SQL', 'Power BI', 'Pandas'],
+    Icon: BarChart3,
   },
   {
-    name: 'AI / ML',
-    description: 'Predictive models and vision/NLP pipelines — from scikit-learn baselines to PyTorch and Hugging Face.',
+    name: 'Machine Learning',
+    description:
+      'Build and evaluate practical ML models for prediction, classification, and recommendation.',
+    stack: ['Scikit-learn', 'XGBoost', 'PyTorch'],
     Icon: BrainCircuit,
   },
   {
-    name: 'Frontend',
-    description: 'React and Next.js interfaces, typed end to end, built to stay maintainable as content changes.',
-    Icon: Code2,
-  },
-  {
-    name: 'Data / Cloud',
-    description: 'Cleaning pipelines, Power BI dashboards, and deployments that turn raw data into decisions.',
-    Icon: Cloud,
+    name: 'Data Applications',
+    description:
+      'Ship the full-stack apps, dashboards, and admin tools that put models and data to work.',
+    stack: ['React', 'Node.js', 'Next.js', 'MySQL'],
+    Icon: LayoutDashboard,
   },
 ]
 
 export default function ServicesSection() {
   return (
     <section id="services" className="mx-auto max-w-5xl px-6 py-24 sm:px-10">
-      <h2 className="hero-heading mb-12 text-3xl font-bold sm:text-5xl">Services</h2>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <h2 className="hero-heading mb-12 text-3xl font-bold sm:text-5xl">What I Do</h2>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
         {SERVICES.map((service, i) => (
           <motion.div
             key={service.name}
@@ -50,6 +50,17 @@ export default function ServicesSection() {
 
             <h3 className="relative mt-5 text-xl font-semibold text-white">{service.name}</h3>
             <p className="relative mt-2 text-neutral-400">{service.description}</p>
+
+            <div className="relative mt-4 flex flex-wrap gap-2">
+              {service.stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-neutral-800 bg-neutral-900/80 px-3 py-1 font-mono text-xs text-neutral-400"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </motion.div>
         ))}
       </div>
