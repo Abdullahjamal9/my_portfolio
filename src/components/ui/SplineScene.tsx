@@ -1,21 +1,35 @@
-import { Suspense, lazy, useCallback, useEffect, useRef } from 'react'
+import { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react'
 import type { Application } from '@splinetool/runtime'
-
-const Spline = lazy(() => import('@splinetool/react-spline'))
 
 interface SplineSceneProps {
   scene: string
+  poster: string
   className?: string
 }
 
-export function SplineScene({ scene, className }: SplineSceneProps) {
+// Phones (no cursor to follow) and Data Saver users only get the still poster,
+// which avoids downloading ~2 MB of Spline runtime plus the scene file.
+const nav = typeof navigator !== 'undefined' ? (navigator as Navigator & { connection?: { saveData?: boolean } }) : undefined
+const skip3D =
+  typeof window !== 'undefined' &&
+  (window.matchMedia('(max-width: 767px)').matches || nav?.connection?.saveData === true)
+
+// Start downloading the Spline runtime as soon as this module loads,
+// instead of waiting for the hero to mount.
+const splineImport = skip3D ? null : import('@splinetool/react-spline')
+const Spline = lazy(() => splineImport ?? new Promise<never>(() => {}))
+
+export function SplineScene({ scene, poster, className }: SplineSceneProps) {
   const appRef = useRef<Application | null>(null)
+  const [ready, setReady] = useState(false)
 
   const handleLoad = useCallback((app: Application) => {
     appRef.current = app
+    setReady(true)
   }, [])
 
   useEffect(() => {
+    if (skip3D) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
 
@@ -42,14 +56,24 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
   }, [])
 
   return (
-    <Suspense
-      fallback={
-        <div className="flex h-full w-full items-center justify-center">
-          <span className="loader" />
-        </div>
-      }
-    >
-      <Spline scene={scene} className={className} onLoad={handleLoad} />
-    </Suspense>
+    <div className="relative h-full w-full">
+      {/* Lightweight still of the robot: visible instantly, fades out once the live scene is ready. */}
+      <img
+        src={poster}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        draggable={false}
+        className={`pointer-events-none absolute inset-0 h-full w-full object-contain transition-opacity duration-700 ${
+          ready ? 'opacity-0' : 'opacity-100'
+        }`}
+      />
+      {!skip3D && (
+        <Suspense fallback={null}>
+          <Spline scene={scene} className={className} onLoad={handleLoad} />
+        </Suspense>
+      )}
+    </div>
   )
 }

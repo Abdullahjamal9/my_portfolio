@@ -91,7 +91,7 @@
       "role": "Data Analyst",
       "year": "2023",
       "link": "https://github.com/Abdullahjamal9/Analyzing_app",
-      "image": "",
+      "image": "/projects/google-play-market-analysis.webp",
       "highlight": false
     },
     {
@@ -103,7 +103,7 @@
       "role": "Data Analyst",
       "year": "2023",
       "link": "https://github.com/Abdullahjamal9/Chinook_music_store",
-      "image": "",
+      "image": "/projects/chinook-sql-analysis.webp",
       "highlight": false
     },
     {
@@ -115,7 +115,7 @@
       "role": "ML Engineer",
       "year": "2024",
       "link": "https://github.com/Abdullahjamal9/T20-Score-Predictor",
-      "image": "",
+      "image": "/projects/t20-score-predictor.webp",
       "highlight": true
     },
     {
@@ -127,7 +127,7 @@
       "role": "ML Engineer",
       "year": "2024",
       "link": "https://github.com/Abdullahjamal9/Movie-Recommendation-System",
-      "image": "",
+      "image": "/projects/movie-recommender.webp",
       "highlight": false
     },
     {
@@ -139,7 +139,7 @@
       "role": "ML Engineer",
       "year": "2024",
       "link": "https://github.com/Abdullahjamal9/Talent_Scan",
-      "image": "",
+      "image": "/projects/talent-scan.webp",
       "highlight": false
     },
     {
@@ -151,7 +151,7 @@
       "role": "Deep Learning Engineer",
       "year": "2024",
       "link": "https://github.com/Abdullahjamal9/Balance-Fall-Assessment",
-      "image": "",
+      "image": "/projects/fall-detection-videomae.webp",
       "highlight": false
     },
     {
@@ -163,7 +163,7 @@
       "role": "Deep Learning Engineer",
       "year": "2024",
       "link": "https://github.com/Abdullahjamal9/Advanced-2D-Human-Pose-Estimation",
-      "image": "",
+      "image": "/projects/2d-human-pose-estimation.webp",
       "highlight": false
     },
     {
@@ -175,7 +175,7 @@
       "role": "Deep Learning Engineer",
       "year": "2023",
       "link": "https://github.com/Abdullahjamal9/Gait-Classification",
-      "image": "",
+      "image": "/projects/gait-classification.webp",
       "highlight": false
     },
     {
@@ -187,7 +187,7 @@
       "role": "Deep Learning Engineer",
       "year": "2023",
       "link": "https://github.com/Abdullahjamal9/UCF-Crime-Video-Classification",
-      "image": "",
+      "image": "/projects/ucf-crime-classification.webp",
       "highlight": false
     },
     {
@@ -199,7 +199,7 @@
       "role": "Full-Stack Developer",
       "year": "2025",
       "link": "https://github.com/Abdullahjamal9/Advanced_testing_portal",
-      "image": "",
+      "image": "/projects/advanced-testing-portal.webp",
       "highlight": false
     },
     {
@@ -212,7 +212,7 @@
       "year": "2025",
       "link": "https://github.com/Abdullahjamal9/E-commerce_website",
       "liveLink": "https://www.reliablestorepk.com/",
-      "image": "",
+      "image": "/projects/premium-shoes-store.webp",
       "highlight": false
     },
     {
@@ -224,7 +224,7 @@
       "role": "Full-Stack Developer",
       "year": "2024",
       "link": "https://github.com/Abdullahjamal9/Whatsapp-chatbot",
-      "image": "",
+      "image": "/projects/whatsapp-bot-dashboard.webp",
       "highlight": false
     }
   ],

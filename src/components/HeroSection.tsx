@@ -67,7 +67,8 @@ export default function HeroSection() {
         {/* Right content — interactive 3D robot (follows the cursor) */}
         <div className="h-[420px] w-full sm:h-[520px] md:h-[600px]">
           <SplineScene
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            scene="/robot.splinecode"
+            poster="/robot-poster.webp"
             className="h-full w-full"
           />
         </div>

@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <img
           src={project.image}
           alt={project.title}
-          className="mt-6 min-h-0 w-full flex-1 rounded-lg object-cover max-h-40 sm:max-h-48"
+          className="mt-6 aspect-[12/5] w-full rounded-lg object-cover sm:aspect-auto sm:min-h-0 sm:flex-1 sm:max-h-72"
         />
       ) : (
         <div
