@@ -7,12 +7,14 @@ interface SplineSceneProps {
   className?: string
 }
 
-// Phones (no cursor to follow) and Data Saver users only get the still poster,
-// which avoids downloading ~2 MB of Spline runtime plus the scene file.
+// Data Saver users only get the still poster, which avoids downloading ~2 MB of
+// Spline runtime plus the scene file.
 const nav = typeof navigator !== 'undefined' ? (navigator as Navigator & { connection?: { saveData?: boolean } }) : undefined
-const skip3D =
-  typeof window !== 'undefined' &&
-  (window.matchMedia('(max-width: 767px)').matches || nav?.connection?.saveData === true)
+const skip3D = nav?.connection?.saveData === true
+
+// Phones have no cursor: let the scene play its built-in idle arm movement only,
+// and let touches pass through so the page still scrolls.
+const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
 
 // Start downloading the Spline runtime as soon as this module loads,
 // instead of waiting for the hero to mount.
@@ -29,7 +31,7 @@ export function SplineScene({ scene, poster, className }: SplineSceneProps) {
   }, [])
 
   useEffect(() => {
-    if (skip3D) return
+    if (skip3D || isMobile) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
 
@@ -56,7 +58,7 @@ export function SplineScene({ scene, poster, className }: SplineSceneProps) {
   }, [])
 
   return (
-    <div className="relative h-full w-full">
+    <div className={`relative h-full w-full ${isMobile ? 'pointer-events-none' : ''}`}>
       {/* Lightweight still of the robot: visible instantly, fades out once the live scene is ready. */}
       <img
         src={poster}
