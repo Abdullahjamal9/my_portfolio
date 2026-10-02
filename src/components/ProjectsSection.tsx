@@ -13,8 +13,8 @@ export default function ProjectsSection() {
         </span>
       </div>
       <div>
-        {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>
